@@ -1,4 +1,6 @@
-﻿namespace Polymorphism_example
+﻿using System.Runtime.ExceptionServices;
+
+namespace Polymorphism_example
 {
     internal class Program
     {
@@ -16,6 +18,18 @@
             }
         }
 
+
+        public class SuperNews : News
+        {
+            public string SuperMethod()
+            {
+                string superNews = "Super! " + Description;
+
+                return superNews;
+            }
+
+        }
+
         static void Main(string[] args)
         {
 
@@ -23,15 +37,24 @@
 
             newsObject.Description = "First News";
 
-
-
-
-
             Console.WriteLine("Hello, World!");
 
             Console.WriteLine(newsObject.Description);
 
             Console.WriteLine(newsObject.GetHappyNews());
+
+
+            SuperNews superNewsObject = new SuperNews();
+
+            superNewsObject.Description = "First super news";
+
+
+            Console.WriteLine(superNewsObject.Description);
+
+            Console.WriteLine(superNewsObject.GetHappyNews());
+
+            Console.WriteLine(superNewsObject.SuperMethod());
+
         }
     }
 }
