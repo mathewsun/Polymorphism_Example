@@ -14,6 +14,20 @@
 
                 return happyNews;
             }
+
+            public virtual string GetWelcomeNews()
+            {
+                string welcomeNews = "Welcome! " + Description;
+
+                return welcomeNews;
+            }
+
+            public string GetTransactionNews()
+            {
+                string welcomeNews = "Transaction! " + Description;
+
+                return welcomeNews;
+            }
         }
 
 
@@ -24,6 +38,20 @@
                 string superNews = "Super! " + Description;
 
                 return superNews;
+            }
+
+            public override string GetWelcomeNews()
+            {
+                string welcomeNews = "OverrideWelcome! " + Description;
+
+                return welcomeNews;
+            }
+
+            public new string GetTransactionNews()
+            {
+                string welcomeNews = "NewTransaction! " + Description;
+
+                return welcomeNews;
             }
 
         }
@@ -52,6 +80,20 @@
             Console.WriteLine(superNewsObject.GetHappyNews());
 
             Console.WriteLine(superNewsObject.SuperMethod());
+
+            Console.WriteLine("");
+
+            Console.WriteLine(superNewsObject.GetWelcomeNews());
+
+            Console.WriteLine(superNewsObject.GetTransactionNews());
+
+            Console.WriteLine("");
+
+            News tempNews = new SuperNews();
+
+            Console.WriteLine(tempNews.GetWelcomeNews());
+
+            Console.WriteLine(tempNews.GetTransactionNews());
 
         }
     }
