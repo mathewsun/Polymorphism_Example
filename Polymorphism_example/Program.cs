@@ -1,6 +1,4 @@
-﻿using System.Runtime.ExceptionServices;
-
-namespace Polymorphism_example
+﻿namespace Polymorphism_example
 {
     internal class Program
     {
